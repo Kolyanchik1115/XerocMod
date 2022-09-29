@@ -28,4 +28,3 @@ public class CosmicFreeze extends MobEffect {
     }
 }
 
-
