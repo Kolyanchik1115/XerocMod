@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " X ",
+    " # ",
+    " # "
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:stick"
+    },
+    "X": {
+      "item": "xeroc:cosmic_ingot"
+    }
+  },
+  "result": {
+    "item": "xeroc:cosmic_shovel"
+  }
+}
