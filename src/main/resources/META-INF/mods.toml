@@ -27,7 +27,7 @@ displayName="Xeroc" #mandatory
 # A URL for the "homepage" for this mod, displayed in the mod UI
 #displayURL="https://change.me.to.your.mods.homepage.example.invalid/" #optional
 # A file name (in the root of the mod JAR) containing a logo for display
-logoFile="examplemod.png" #optional
+logoFile="xeroc.png" #optional
 # A text field displayed in the mod UI
 credits="Thanks for this example mod goes to Java" #optional
 # A text field displayed in the mod UI
@@ -43,7 +43,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magn
 # A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
 [[dependencies.xeroc]] #optional
     # the modid of the dependency
-    modId="forge" #mandatory
+    modId="xeroc" #mandatory
     # Does this dependency have to exist - if not, ordering below must be specified
     mandatory=true #mandatory
     # The version range of the dependency
@@ -54,7 +54,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed mollis lacinia magn
     side="BOTH"
 # Here's another dependency
 [[dependencies.xeroc]]
-    modId="minecraft"
+    modId="xeroc"
     mandatory=true
 # This version range declares a minimum of the current minecraft version up to but not including the next major version
     versionRange="[1.18.1,1.19)"
