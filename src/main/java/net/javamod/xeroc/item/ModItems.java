@@ -28,5 +28,4 @@ public class ModItems {
     public static final RegistryObject<Item> COSMIC_LEGGINGS = ITEMS.register("cosmic_leggings", () -> new ArmorItem(ModArmor.COSMIC, EquipmentSlot.LEGS,new Item.Properties().tab(ModCreativeTab.XEROC_TAB)));
 
 
-
 }

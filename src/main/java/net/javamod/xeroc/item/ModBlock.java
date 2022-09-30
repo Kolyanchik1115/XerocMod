@@ -15,5 +15,4 @@ public class ModBlock {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, MOD_ID);
 
     public static final RegistryObject<Block> COSMIC_ORE = BLOCKS.register("cosmic_ore", () -> new Block(BlockBehaviour.Properties.of(Material.STONE, MaterialColor.STONE).strength(2F, 8.0F)));
-
 }
