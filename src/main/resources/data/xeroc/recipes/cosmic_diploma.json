@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "XXX",
+    "###",
+    "XXX"
+  ],
+  "key": {
+    "#": {
+      "item": "xeroc:cosmic_kurs"
+    },
+    "X": {
+      "item": "xeroc:cosmic_kurs"
+    }
+  },
+  "result": {
+    "item": "xeroc:cosmic_diploma"
+  }
+}
