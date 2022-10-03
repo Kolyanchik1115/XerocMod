@@ -2,6 +2,7 @@ package net.javamod.xeroc;
 
 
 import net.javamod.xeroc.effect.ModEffects;
+import net.javamod.xeroc.painting.ModPaintings;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 
@@ -21,6 +22,7 @@ public class Xeroc {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
         ITEMS.register(bus);
         BLOCKS.register(bus);
+        ModPaintings.register(bus);
         ModEffects.register(bus);
 
     }
