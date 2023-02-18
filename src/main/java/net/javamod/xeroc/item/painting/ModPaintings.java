@@ -1,4 +1,4 @@
-package net.javamod.xeroc.painting;
+package net.javamod.xeroc.item.painting;
 
 import net.javamod.xeroc.Xeroc;
 import net.minecraft.world.entity.decoration.Motive;
