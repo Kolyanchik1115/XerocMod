@@ -12,7 +12,7 @@ import net.minecraftforge.registries.RegistryObject;
 
 public class ModEntitys {
 
-    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITIES, Xeroc.MOD_ID);
+    public static final DeferredRegister<EntityType<?>> ENTITY_TYPES = DeferredRegister.create(ForgeRegistries.ENTITY_TYPES, Xeroc.MOD_ID);
 
     public static final RegistryObject<EntityType<AlienEntity>> ALIEN = ENTITY_TYPES.register("alien", () ->
             EntityType.Builder.of(AlienEntity::new, MobCategory.MONSTER).sized(0.4f, 1.5f).build(

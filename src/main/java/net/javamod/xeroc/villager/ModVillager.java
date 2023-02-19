@@ -11,7 +11,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModVillager {
 
 //    public static final DeferredRegister<PoiType> POI_TYPES = DeferredRegister.create(ForgeRegistries.POI_TYPES, Xeroc.MOD_ID);
-    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSION = DeferredRegister.create(ForgeRegistries.PROFESSIONS, Xeroc.MOD_ID);
+    public static final DeferredRegister<VillagerProfession> VILLAGER_PROFESSION = DeferredRegister.create(ForgeRegistries.VILLAGER_PROFESSIONS, Xeroc.MOD_ID);
 //    public static final DeferredRegister<VillagerType> VILLAGER_PROFESSION = DeferredRegister.create(ForgeRegistries.PROFESSIONS, Xeroc.MOD_ID);
 
 
