@@ -7,6 +7,8 @@ import net.minecraft.world.effect.MobEffectCategory;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 
+import java.util.Objects;
+
 class SpaceSuffocation extends MobEffect {
 
     public SpaceSuffocation(MobEffectCategory category, int color) {
@@ -30,7 +32,6 @@ class SpaceSuffocation extends MobEffect {
     }
 //todo: need to refactor this code
     public void removeEffect(LivingEntity entity, AttributeModifier breathModifier) {
-        entity.getAttributes().getInstance(Attributes.MAX_HEALTH).removeModifier(breathModifier);
-        entity.getAttributes().getInstance(Attributes.MAX_HEALTH).setBaseValue(entity.getMaxHealth());
+        Objects.requireNonNull(entity.getAttributes().getInstance(Attributes.MAX_HEALTH)).removeModifier(breathModifier);
     }
 }
