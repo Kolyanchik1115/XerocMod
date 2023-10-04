@@ -24,11 +24,4 @@ public class AlienRenderer extends GeoEntityRenderer<AlienEntity> {
         return new ResourceLocation(Xeroc.MOD_ID, "textures/entity/alien_texture.png");
     }
 
-//    public RenderType getRenderType(AlienEntity animatable, float partialTicks, PoseStack stack,
-//                                    @Nullable MultiBufferSource renderTypeBuffer,
-//                                    @Nullable VertexConsumer vertexBuilder, int packedLightIn,
-//                                    ResourceLocation textureLocation) {
-//        stack.scale(0.8f, 0.8f, 0.8f);
-//        return super.getRenderType(animatable, partialTicks, stack, renderTypeBuffer, vertexBuilder, packedLightIn, textureLocation);
-//    }
 }
