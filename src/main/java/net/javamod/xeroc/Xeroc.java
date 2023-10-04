@@ -9,15 +9,17 @@ import net.javamod.xeroc.item.ModItems;
 import net.javamod.xeroc.item.painting.ModPaintings;
 import net.javamod.xeroc.villager.ModVillager;
 import net.minecraft.client.renderer.entity.EntityRenderers;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.event.CreativeModeTabEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import software.bernie.geckolib.GeckoLib;
-
 
 import static net.javamod.xeroc.Xeroc.MOD_ID;
 
@@ -36,8 +38,21 @@ public class Xeroc {
         ModPaintings.register(bus);
         ModVillager.VILLAGER_PROFESSION.register(bus);
         bus.addListener(this::addCreative);
+        bus.addListener(this::commonSetup);
         GeckoLib.initialize();
     }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+        event.enqueueWork(() -> {
+            SpawnPlacements.
+                    register(ModEntitys.ALIEN.get(),
+                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                    Monster::checkMonsterSpawnRules);
+
+
+        });
+    }
+
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
 
         if(event.getTab() == ModCreativeModeTab.TUTORIAL_TAB) {
