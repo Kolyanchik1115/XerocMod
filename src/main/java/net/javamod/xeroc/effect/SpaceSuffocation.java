@@ -1,6 +1,5 @@
 package net.javamod.xeroc.effect;
 import net.javamod.xeroc.item.ModItems;
-import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.effect.MobEffect;
@@ -21,7 +20,7 @@ class SpaceSuffocation extends MobEffect {
         if (entity.hasItemInSlot(EquipmentSlot.CHEST) && entity.getItemBySlot(EquipmentSlot.CHEST).getItem() == ModItems.COSMIC_CHESTPLATE.get()) {
             removeEffect(entity, breathModifier);
         } else {
-            entity.hurt(DamageSource.GENERIC, 4.0F);
+            entity.hurt(entity.damageSources().generic(), 4.0F);
         }
     }
 
@@ -29,7 +28,7 @@ class SpaceSuffocation extends MobEffect {
     public boolean isDurationEffectTick(int duration, int amplifier) {
         return true;
     }
-
+//todo: need to refactor this code
     public void removeEffect(LivingEntity entity, AttributeModifier breathModifier) {
         entity.getAttributes().getInstance(Attributes.MAX_HEALTH).removeModifier(breathModifier);
         entity.getAttributes().getInstance(Attributes.MAX_HEALTH).setBaseValue(entity.getMaxHealth());

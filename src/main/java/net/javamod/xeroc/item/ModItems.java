@@ -25,10 +25,10 @@ public class ModItems {
     public static final RegistryObject<Item> COSMIC_AXE = ITEMS.register("cosmic_axe", () -> new AxeItem(ModTier.COSMIC_INGOT, 10.0F, -3.1F, new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_PICKAXE = ITEMS.register("cosmic_pickaxe", () -> new PickaxeItem(ModTier.COSMIC_INGOT, 1, -2.8F, new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_SHOVEL = ITEMS.register("cosmic_shovel", () -> new ShovelItem(ModTier.COSMIC_INGOT, 1.5F, -3.0F, new Item.Properties()));
-    public static final RegistryObject<Item> COSMIC_HELMET = ITEMS.register("cosmic_helmet", () -> new ModArmorItem(ModArmor.COSMIC, EquipmentSlot.HEAD, new Item.Properties()));
-    public static final RegistryObject<Item> COSMIC_CHESTPLATE = ITEMS.register("cosmic_chestplate", () -> new ArmorItem(ModArmor.COSMIC, EquipmentSlot.CHEST, new Item.Properties()));
-    public static final RegistryObject<Item> COSMIC_BOOTS = ITEMS.register("cosmic_boots", () -> new ArmorItem(ModArmor.COSMIC, EquipmentSlot.FEET, new Item.Properties()));
-    public static final RegistryObject<Item> COSMIC_LEGGINGS = ITEMS.register("cosmic_leggings", () -> new ArmorItem(ModArmor.COSMIC, EquipmentSlot.LEGS, new Item.Properties()));
+    public static final RegistryObject<Item> COSMIC_HELMET = ITEMS.register("cosmic_helmet", () -> new ModArmorItem(ModArmor.COSMIC, ArmorItem.Type.HELMET, new Item.Properties()));
+    public static final RegistryObject<Item> COSMIC_CHESTPLATE = ITEMS.register("cosmic_chestplate", () -> new ModArmorItem(ModArmor.COSMIC, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+    public static final RegistryObject<Item> COSMIC_BOOTS = ITEMS.register("cosmic_boots", () -> new ModArmorItem(ModArmor.COSMIC, ArmorItem.Type.BOOTS, new Item.Properties()));
+    public static final RegistryObject<Item> COSMIC_LEGGINGS = ITEMS.register("cosmic_leggings", () -> new ArmorItem(ModArmor.COSMIC, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<Item> AlIEN_SPAWN_EGG = ITEMS.register("alien_spawn_egg", () -> new ForgeSpawnEggItem(ModEntitys.ALIEN, 0x22b341, 0x19732e, new Item.Properties()));
 
     public static void register(IEventBus eventBus) {

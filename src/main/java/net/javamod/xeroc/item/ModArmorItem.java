@@ -22,10 +22,8 @@ public class ModArmorItem extends ArmorItem {
             (new ImmutableMap.Builder<ArmorMaterial, MobEffect>())
                     .put(ModArmor.COSMIC, MobEffects.DAMAGE_BOOST).build();
 
-
-
-    public ModArmorItem(ArmorMaterial material, EquipmentSlot slot, Properties settings) {
-        super(material, slot, settings);
+    public ModArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
+        super(p_40386_, p_266831_, p_40388_);
     }
 
     @Override

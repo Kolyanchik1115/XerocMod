@@ -106,7 +106,7 @@ public class AlienEntity extends Monster implements GeoAnimatable, RangedAttackM
 
     @Override
     public void performRangedAttack(LivingEntity target, float power) {
-        AlienEntity.MyArrowEntity projectile = new AlienEntity.MyArrowEntity(this.level, this);
+        AlienEntity.MyArrowEntity projectile = new AlienEntity.MyArrowEntity(this.level(), this);
         double dx = target.getX() - this.getX();
         double dy = target.getEyeY() - projectile.getY();
         double dz = target.getZ() - this.getZ();
@@ -116,7 +116,7 @@ public class AlienEntity extends Monster implements GeoAnimatable, RangedAttackM
         double horizontalSpeed = distance / time;
         double verticalSpeed = (gravity + dy) * time;
         projectile.setDeltaMovement(dx / distance * horizontalSpeed * power, verticalSpeed * power, dz / distance * horizontalSpeed * power);
-        this.level.addFreshEntity(projectile);
+        this.level().addFreshEntity(projectile);
     }
 
     public static class MyArrowEntity extends AbstractArrow {

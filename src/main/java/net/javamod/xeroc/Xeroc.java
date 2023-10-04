@@ -12,7 +12,7 @@ import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
 import net.minecraft.world.level.levelgen.Heightmap;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -31,6 +31,8 @@ public class Xeroc {
     public Xeroc() {
         IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
 
+
+        ModCreativeModeTab.register(bus);
         ModItems.register(bus);
         ModBlock.register(bus);
         ModEffects.register(bus);
@@ -53,9 +55,9 @@ public class Xeroc {
         });
     }
 
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTab() == ModCreativeModeTab.TUTORIAL_TAB) {
+        if(event.getTab() == ModCreativeModeTab.TUTORIAL_TAB.get()) {
             event.accept(ModItems.COSMIC_KURS);
             event.accept(ModItems.COSMIC_KURS);
 

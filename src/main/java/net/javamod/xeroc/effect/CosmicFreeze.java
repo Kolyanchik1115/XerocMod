@@ -11,7 +11,7 @@ public class CosmicFreeze extends MobEffect {
 
     @Override
     public void applyEffectTick(LivingEntity pLivingEntity, int pAmplifier) {
-        if (!pLivingEntity.level.isClientSide()) {
+        if (!pLivingEntity.level().isClientSide()) {
             Double x = pLivingEntity.getX();
             Double y = pLivingEntity.getY();
             Double z = pLivingEntity.getZ();
@@ -21,10 +21,8 @@ public class CosmicFreeze extends MobEffect {
         }
         super.applyEffectTick(pLivingEntity, pAmplifier);
     }
-
     @Override
     public boolean isDurationEffectTick(int pDuration, int pAmplifier) {
         return true;
     }
 }
-
