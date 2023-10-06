@@ -2,7 +2,7 @@ package net.javamod.xeroc.item;
 
 
 import net.javamod.xeroc.entity.ModEntitys;
-import net.minecraft.world.entity.EquipmentSlot;
+import net.javamod.xeroc.item.custom.CatalystItem;
 import net.minecraft.world.item.*;
 import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,7 +20,7 @@ public class ModItems {
     public static final RegistryObject<Item> COSMIC_ORE = ITEMS.register("cosmic_ore", () -> new BlockItem(ModBlock.COSMIC_ORE.get(), new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_INGOT = ITEMS.register("cosmic_ingot", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_KURS = ITEMS.register("cosmic_kurs", () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> COSMIC_DIPLOMA = ITEMS.register("cosmic_diploma", () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> COSMIC_DIPLOMA = ITEMS.register("cosmic_diploma", CatalystItem::new);
     public static final RegistryObject<Item> COSMIC_SWORD = ITEMS.register("cosmic_sword", () -> new SwordItem(ModTier.COSMIC_INGOT, 8, -2.4F, new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_AXE = ITEMS.register("cosmic_axe", () -> new AxeItem(ModTier.COSMIC_INGOT, 10.0F, -3.1F, new Item.Properties()));
     public static final RegistryObject<Item> COSMIC_PICKAXE = ITEMS.register("cosmic_pickaxe", () -> new PickaxeItem(ModTier.COSMIC_INGOT, 1, -2.8F, new Item.Properties()));

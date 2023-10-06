@@ -7,7 +7,11 @@ import net.javamod.xeroc.item.ModBlock;
 import net.javamod.xeroc.item.ModCreativeModeTab;
 import net.javamod.xeroc.item.ModItems;
 import net.javamod.xeroc.item.painting.ModPaintings;
+import net.javamod.xeroc.villager.ModPOIs;
 import net.javamod.xeroc.villager.ModVillager;
+import net.javamod.xeroc.world.dimension.ModDimension;
+import net.minecraft.client.renderer.ItemBlockRenderTypes;
+import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.entity.monster.Monster;
@@ -34,22 +38,29 @@ public class Xeroc {
 
         ModCreativeModeTab.register(bus);
         ModItems.register(bus);
+        ModDimension.register();
         ModBlock.register(bus);
         ModEffects.register(bus);
         ModEntitys.register(bus);
+        ModPOIs.register(bus);
         ModPaintings.register(bus);
         ModVillager.VILLAGER_PROFESSION.register(bus);
         bus.addListener(this::addCreative);
         bus.addListener(this::commonSetup);
+        bus.addListener(this:: clientSetup);
         GeckoLib.initialize();
+    }
+
+    private void clientSetup(final FMLClientSetupEvent event) {
+        ItemBlockRenderTypes.setRenderLayer(ModBlock.COSMIC_PORTAL.get(), RenderType.translucent());
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         event.enqueueWork(() -> {
             SpawnPlacements.
                     register(ModEntitys.ALIEN.get(),
-                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Monster::checkMonsterSpawnRules);
+                            SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+                            Monster::checkMonsterSpawnRules);
 
 
         });
@@ -57,7 +68,7 @@ public class Xeroc {
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
 
-        if(event.getTab() == ModCreativeModeTab.TUTORIAL_TAB.get()) {
+        if (event.getTab() == ModCreativeModeTab.TUTORIAL_TAB.get()) {
             event.accept(ModItems.COSMIC_KURS);
             event.accept(ModItems.COSMIC_KURS);
 
