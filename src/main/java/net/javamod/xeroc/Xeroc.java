@@ -1,91 +1,97 @@
+
 package net.javamod.xeroc;
 
+import net.javamod.xeroc.block.ModBlock;
 import net.javamod.xeroc.effect.ModEffects;
-import net.javamod.xeroc.entity.ModEntitys;
-import net.javamod.xeroc.event.client.AlienRenderer;
-import net.javamod.xeroc.item.ModBlock;
-import net.javamod.xeroc.item.ModCreativeModeTab;
+import net.javamod.xeroc.item.ModCreativeModTabs;
 import net.javamod.xeroc.item.ModItems;
 import net.javamod.xeroc.item.painting.ModPaintings;
-import net.javamod.xeroc.villager.ModVillager;
-import net.minecraft.client.renderer.entity.EntityRenderers;
-import net.minecraft.world.entity.SpawnPlacements;
-import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.level.levelgen.Heightmap;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
+import net.minecraftforge.event.server.ServerStartedEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import software.bernie.geckolib.GeckoLib;
 
-import static net.javamod.xeroc.Xeroc.MOD_ID;
 
-@Mod(MOD_ID)
-@Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
+@Mod(Xeroc.MOD_ID)
 public class Xeroc {
     public static final String MOD_ID = "xeroc";
 
     public Xeroc() {
-        IEventBus bus = FMLJavaModLoadingContext.get().getModEventBus();
+        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
+
+        ModCreativeModTabs.register(modEventBus);
+
+        ModItems.register(modEventBus);
+
+        ModBlock.register(modEventBus);
+        ModPaintings.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+
+        modEventBus.addListener(this::commonSetup);
+
+        MinecraftForge.EVENT_BUS.register(this);
+
+        modEventBus.addListener(this::addCreative);
+
+        //////
+//        modEventBus.addListener(this::commonSetup);
+//        modEventBus.addListener(this::clientSetup);
 
 
-        ModCreativeModeTab.register(bus);
-        ModItems.register(bus);
-        ModBlock.register(bus);
-        ModEffects.register(bus);
-        ModEntitys.register(bus);
-        ModPaintings.register(bus);
-        ModVillager.VILLAGER_PROFESSION.register(bus);
-        bus.addListener(this::addCreative);
-        bus.addListener(this::commonSetup);
-        GeckoLib.initialize();
-    }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() -> {
-            SpawnPlacements.
-                    register(ModEntitys.ALIEN.get(),
-                    SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-                    Monster::checkMonsterSpawnRules);
-
-
-        });
+//        ModEntitys.register(modEventBus);
+//        ModVillager.VILLAGER_PROFESSION.register(modEventBus);
+//
+//        ModPaintings.register(modEventBus);
+//        GeckoLib.initialize();
+        //////////
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
-        if(event.getTab() == ModCreativeModeTab.TUTORIAL_TAB.get()) {
-            event.accept(ModItems.COSMIC_KURS);
-            event.accept(ModItems.COSMIC_KURS);
-
-            event.accept(ModItems.COSMIC_SWORD);
-            event.accept(ModItems.COSMIC_ORE);
-            event.accept(ModItems.AlIEN_SPAWN_EGG);
-            event.accept(ModItems.COSMIC_KURS);
-            event.accept(ModItems.COSMIC_SNICKERS);
-
-            event.accept(ModItems.COSMIC_SHOVEL);
-            event.accept(ModItems.COSMIC_PICKAXE);
-            event.accept(ModItems.COSMIC_MEAT);
-            event.accept(ModItems.COSMIC_LEGGINGS);
-            event.accept(ModItems.COSMIC_CHESTPLATE);
-            event.accept(ModItems.COSMIC_HELMET);
-            event.accept(ModItems.COSMIC_AXE);
-            event.accept(ModItems.COSMIC_BOOTS);
-            event.accept(ModItems.COSMIC_DIPLOMA);
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.COSMIC_INGOT);
         }
     }
 
-    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
+    ///////
+    private void clientSetup(final FMLClientSetupEvent event) {
+    }
+
+    private void commonSetup(final FMLCommonSetupEvent event) {
+//        event.enqueueWork(() -> {
+//            SpawnPlacements.
+//                    register(ModEntitys.ALIEN.get(),
+//                            SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
+//                            Monster::checkMonsterSpawnRules);
+//
+//
+//        });
+    }
+
+    //////////
+    @SubscribeEvent
+    public void onServerStarting(ServerStartedEvent event) {
+    }
+
+    @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-
-            EntityRenderers.register(ModEntitys.ALIEN.get(), AlienRenderer::new);
+            //////
+//            EntityRenderers.register(ModEntitys.ALIEN.get(), AlienRenderer::new);
+            ///////
         }
     }
 }
+
+
 
