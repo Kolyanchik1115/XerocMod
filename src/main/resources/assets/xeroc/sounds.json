@@ -1,0 +1,10 @@
+{
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "xeroc:bar_brawl",
+        "stream": true
+      }
+    ]
+  }
+}

@@ -18,10 +18,10 @@ public class ModArmorItem extends ArmorItem {
 
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffect>())
-                    .put(ModArmorMaterials.COSMIC, MobEffects.HEALTH_BOOST).build();
+                    .put(ModArmorMaterials.COSMIC_INGOT, MobEffects.HEALTH_BOOST).build();
     private static final Map<ArmorMaterial, MobEffect> MATERIAL_TO_EFFECT_MAP_1 =
             (new ImmutableMap.Builder<ArmorMaterial, MobEffect>())
-                    .put(ModArmorMaterials.COSMIC, MobEffects.DAMAGE_BOOST).build();
+                    .put(ModArmorMaterials.COSMIC_INGOT, MobEffects.DAMAGE_BOOST).build();
 
     public ModArmorItem(ArmorMaterial p_40386_, Type p_266831_, Properties p_40388_) {
         super(p_40386_, p_266831_, p_40388_);

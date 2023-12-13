@@ -7,66 +7,72 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.crafting.Ingredient;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-
 public enum ModArmorMaterials implements ArmorMaterial {
-    COSMIC("cosmic", 37, new int[]{4, 7, 10, 4}, 15, SoundEvents.ARMOR_EQUIP_NETHERITE, 3.0F, 0.1F, () ->
-            Ingredient.of(ModItems.COSMIC_INGOT.get())
-    );
+    COSMIC_INGOT("cosmic", 26, new int[]{ 7, 9, 7, 6 }, 25,
+            SoundEvents.ARMOR_EQUIP_GOLD, 3f, 5f, () -> Ingredient.of(ModItems.COSMIC_INGOT.get()));
 
-    private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 11};
     private final String name;
     private final int durabilityMultiplier;
-    private final int[] slotProtections;
+    private final int[] protectionAmounts;
     private final int enchantmentValue;
-    private final SoundEvent sound;
+    private final SoundEvent equipSound;
     private final float toughness;
     private final float knockbackResistance;
     private final Supplier<Ingredient> repairIngredient;
 
-    ModArmorMaterials(String p_40474_, int p_40475_, int[] p_40476_, int p_40477_, SoundEvent p_40478_, float p_40479_, float p_40480_, Supplier<Ingredient> p_40481_) {
-        this.name = p_40474_;
-        this.durabilityMultiplier = p_40475_;
-        this.slotProtections = p_40476_;
-        this.enchantmentValue = p_40477_;
-        this.sound = p_40478_;
-        this.toughness = p_40479_;
-        this.knockbackResistance = p_40480_;
-        this.repairIngredient = p_40481_;
-    }
+    private static final int[] BASE_DURABILITY = { 11, 16, 16, 13 };
 
-    public int getDurabilityForType(ArmorItem.Type p_266807_) {
-        return HEALTH_PER_SLOT[p_266807_.ordinal()] * this.durabilityMultiplier;
+    ModArmorMaterials(String name, int durabilityMultiplier, int[] protectionAmounts, int enchantmentValue, SoundEvent equipSound,
+                      float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+        this.name = name;
+        this.durabilityMultiplier = durabilityMultiplier;
+        this.protectionAmounts = protectionAmounts;
+        this.enchantmentValue = enchantmentValue;
+        this.equipSound = equipSound;
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
+        this.repairIngredient = repairIngredient;
     }
 
     @Override
-    public int getDefenseForType(ArmorItem.Type p_267168_) {
-        return this.slotProtections[p_267168_.ordinal()];
+    public int getDurabilityForType(ArmorItem.Type pType) {
+        return BASE_DURABILITY[pType.ordinal()] * this.durabilityMultiplier;
     }
 
+    @Override
+    public int getDefenseForType(ArmorItem.Type pType) {
+        return this.protectionAmounts[pType.ordinal()];
+    }
+
+    @Override
     public int getEnchantmentValue() {
-        return this.enchantmentValue;
+        return enchantmentValue;
     }
 
-    public @NotNull SoundEvent getEquipSound() {
-        return this.sound;
+    @Override
+    public SoundEvent getEquipSound() {
+        return this.equipSound;
     }
 
-    public @NotNull Ingredient getRepairIngredient() {
+    @Override
+    public Ingredient getRepairIngredient() {
         return this.repairIngredient.get();
     }
 
-    public @NotNull String getName() {
+    @Override
+    public String getName() {
         return Xeroc.MOD_ID + ":" + this.name;
     }
 
+    @Override
     public float getToughness() {
         return this.toughness;
     }
 
+    @Override
     public float getKnockbackResistance() {
         return this.knockbackResistance;
     }

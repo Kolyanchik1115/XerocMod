@@ -1,6 +1,9 @@
 {
   "item.xeroc.cosmic_meat" : "Cosmic meat",
   "itemGroup.xeroctab": "All items",
-  "creativetab.xeroc_tab": "XerocMod"
+  "creativetab.xeroc_tab": "XerocMod",
+  "item.xeroc.bar_brawl_music_disc": "Bar Brawl Music Disc",
+  "item.xeroc.bar_brawl_music_disc.desc": "Bryan Tech - Bar Brawl (CC0)",
+  "entity.minecraft.villager.xeroc.soundmaster": "Maluta - Snickers Master"
 }
 

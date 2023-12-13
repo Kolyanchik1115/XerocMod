@@ -7,6 +7,8 @@ import net.javamod.xeroc.item.ModCreativeModTabs;
 import net.javamod.xeroc.item.ModItems;
 import net.javamod.xeroc.item.painting.ModPaintings;
 import net.javamod.xeroc.loot.ModLootModifier;
+import net.javamod.xeroc.sound.ModSound;
+import net.javamod.xeroc.villager.ModVillager;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -19,7 +21,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-
 
 @Mod(Xeroc.MOD_ID)
 public class Xeroc {
@@ -36,6 +37,8 @@ public class Xeroc {
         ModPaintings.register(modEventBus);
 
         ModEffects.register(modEventBus);
+        ModSound.register(modEventBus);
+        ModVillager.register(modEventBus);
 
         ModLootModifier.register(modEventBus);
 
