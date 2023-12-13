@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cosmic_ore": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "xeroc:cosmic_ore"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "xeroc:cosmic_ingot_from_smelting_cosmic_ore"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cosmic_ore",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "xeroc:cosmic_ingot_from_smelting_cosmic_ore"
+    ]
+  },
+  "sends_telemetry_event": false
+}

@@ -41,8 +41,7 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModItems.COSMIC_BOOTS.get());
 
                         pOutput.accept(ModBlock.COSMIC_ORE.get());
-
-
+                        pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
 
                     })

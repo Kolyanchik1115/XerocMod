@@ -1,5 +1,9 @@
 {
   "item.xeroc.cosmic_meat": "Космическое мясо",
   "itemGroup.xeroctab": "Все предметы",
-  "creativetab.xeroc_tab": "XerocMod"
+  "creativetab.xeroc_tab": "XerocMod",
+  "item.xeroc.bar_brawl_music_disc":"SUP LORE",
+  "item.xeroc.bar_brawl_music_disc.desc":"Petrusenko - SUP lore music (DERIKWAVE)",
+  "entity.minecraft.villager.xeroc.soundmaster": "Малюта - Сникерсный мастер"
+
 }
