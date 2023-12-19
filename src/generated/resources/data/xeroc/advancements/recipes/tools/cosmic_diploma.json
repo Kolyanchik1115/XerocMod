@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cosmic_diploma": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "xeroc:cosmic_diploma"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "xeroc:cosmic_diploma"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cosmic_diploma",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "xeroc:cosmic_diploma"
+    ]
+  },
+  "sends_telemetry_event": false
+}

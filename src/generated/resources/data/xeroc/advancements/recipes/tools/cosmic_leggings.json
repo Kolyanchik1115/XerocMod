@@ -1,0 +1,35 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_cosmic_leggings": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "xeroc:cosmic_leggings"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "xeroc:cosmic_leggings"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_cosmic_leggings",
+      "has_the_recipe"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "xeroc:cosmic_leggings"
+    ]
+  },
+  "sends_telemetry_event": false
+}

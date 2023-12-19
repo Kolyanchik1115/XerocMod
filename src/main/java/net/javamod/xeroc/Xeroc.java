@@ -3,12 +3,15 @@ package net.javamod.xeroc;
 
 import net.javamod.xeroc.block.ModBlock;
 import net.javamod.xeroc.effect.ModEffects;
+import net.javamod.xeroc.entity.ModEntity;
+import net.javamod.xeroc.entity.client.AlienRenderer;
 import net.javamod.xeroc.item.ModCreativeModTabs;
 import net.javamod.xeroc.item.ModItems;
 import net.javamod.xeroc.item.painting.ModPaintings;
 import net.javamod.xeroc.loot.ModLootModifier;
 import net.javamod.xeroc.sound.ModSound;
 import net.javamod.xeroc.villager.ModVillager;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
@@ -41,25 +44,14 @@ public class Xeroc {
         ModVillager.register(modEventBus);
 
         ModLootModifier.register(modEventBus);
+//        ModPaintings.register(modEventBus);
+        ModEntity.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-
-        //////
-//        modEventBus.addListener(this::commonSetup);
-//        modEventBus.addListener(this::clientSetup);
-
-
-
-//        ModEntitys.register(modEventBus);
-//        ModVillager.VILLAGER_PROFESSION.register(modEventBus);
-//
-//        ModPaintings.register(modEventBus);
-//        GeckoLib.initialize();
-        //////////
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
@@ -68,22 +60,8 @@ public class Xeroc {
         }
     }
 
-    ///////
-    private void clientSetup(final FMLClientSetupEvent event) {
-    }
+    private void commonSetup(final FMLCommonSetupEvent event) {}
 
-    private void commonSetup(final FMLCommonSetupEvent event) {
-//        event.enqueueWork(() -> {
-//            SpawnPlacements.
-//                    register(ModEntitys.ALIEN.get(),
-//                            SpawnPlacements.Type.ON_GROUND, Heightmap.Types.MOTION_BLOCKING_NO_LEAVES,
-//                            Monster::checkMonsterSpawnRules);
-//
-//
-//        });
-    }
-
-    //////////
     @SubscribeEvent
     public void onServerStarting(ServerStartedEvent event) {
     }
@@ -92,9 +70,7 @@ public class Xeroc {
     public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
-            //////
-//            EntityRenderers.register(ModEntitys.ALIEN.get(), AlienRenderer::new);
-            ///////
+            EntityRenderers.register(ModEntity.ALIEN.get(), AlienRenderer::new);
         }
     }
 }
