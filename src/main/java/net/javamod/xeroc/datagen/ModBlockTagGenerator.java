@@ -26,5 +26,13 @@ public class ModBlockTagGenerator extends BlockTagsProvider {
         this.tag(Tags.Blocks.NEEDS_NETHERITE_TOOL)
                 .add(ModBlock.COSMIC_ORE.get());
 
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlock.COSMIC_LOG.get())
+                .add(ModBlock.COSMIC_WOOD.get())
+                .add(ModBlock.STRIPPED_COSMIC_LOG.get())
+                .add(ModBlock.STRIPPED_COSMIC_WOOD.get());
+
+        this.tag(BlockTags.PLANKS)
+                .add(ModBlock.COSMIC_PLANKS.get());
     }
 }

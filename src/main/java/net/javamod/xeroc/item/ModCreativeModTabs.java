@@ -43,6 +43,16 @@ public class ModCreativeModTabs {
                         pOutput.accept(ModBlock.COSMIC_ORE.get());
                         pOutput.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
+                        pOutput.accept(ModBlock.COSMIC_LOG.get());
+                        pOutput.accept(ModBlock.COSMIC_WOOD.get());
+                        pOutput.accept(ModBlock.STRIPPED_COSMIC_WOOD.get());
+                        pOutput.accept(ModBlock.STRIPPED_COSMIC_LOG.get());
+
+                        pOutput.accept(ModBlock.COSMIC_PLANKS.get());
+                        pOutput.accept(ModBlock.COSMIC_LEAVES.get());
+
+
+
 
                     })
                     .build());

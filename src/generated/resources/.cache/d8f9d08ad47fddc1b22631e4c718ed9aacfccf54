@@ -1,4 +1,26 @@
-// 1.20.1	2023-12-13T19:18:21.5056937	Block States: xeroc
+// 1.20.1	2023-12-19T15:58:58.4576516	Block States: xeroc
+dd1b51c76154d6e716c3b99666e4ec1f4d831042 assets/xeroc/blockstates/cosmic_leaves.json
+80a25634f055ff1ad5755571b6cbb2b0b56dde68 assets/xeroc/blockstates/cosmic_log.json
 40b5d84cd390e417f9fa4792479182fed46efcaa assets/xeroc/blockstates/cosmic_ore.json
+4bf90d4e60f0383327eff9ff87197e2c79deb59b assets/xeroc/blockstates/cosmic_planks.json
+df179a0a74c290f209552937208fb4a3702aa90f assets/xeroc/blockstates/cosmic_wood.json
+f2b854209224a030f2c6a77d4f14ff2601e4ccb6 assets/xeroc/blockstates/stripped_cosmic_log.json
+ed156ff797d045e8612753a67ae967a8ce739927 assets/xeroc/blockstates/stripped_cosmic_wood.json
+a0aafe5e5bcd1152d83f30d80008de20d67f7d91 assets/xeroc/models/block/cosmic_leaves.json
+7a7762f4ce42379794ba48f0e1a4cbac1238b09b assets/xeroc/models/block/cosmic_log.json
+5cf132103e4e479c7e6980a78c2e00efa44feb54 assets/xeroc/models/block/cosmic_log_horizontal.json
 892b7f804a6e438821e130b7a41305ab998aaaa8 assets/xeroc/models/block/cosmic_ore.json
+6a5b20211915e520f86db1d5dfe01e0ae432c031 assets/xeroc/models/block/cosmic_planks.json
+5dc4d49e4d3bc40485dcb06bdaab1526170a34c6 assets/xeroc/models/block/cosmic_wood.json
+bb629d67ee76ca5af9f8171679a2ed8ea23196a6 assets/xeroc/models/block/cosmic_wood_horizontal.json
+8ed0d578f553c1e453d16b82d0cc3050dfd4b075 assets/xeroc/models/block/stripped_cosmic_log.json
+c2a24c0904603614b63774e3ef053e1253ce938b assets/xeroc/models/block/stripped_cosmic_log_horizontal.json
+e5c7e92aa617078d957f91cfc1ea6a90a70ffbc6 assets/xeroc/models/block/stripped_cosmic_wood.json
+7cf615ac9c37ce2788d8ce0013807e2a5791abcc assets/xeroc/models/block/stripped_cosmic_wood_horizontal.json
+9f3e2f258b3a7c33beb85dfc7a508618d949e01e assets/xeroc/models/item/cosmic_leaves.json
+5116dd39b013d265386edb5a1845c1fa1c0222bb assets/xeroc/models/item/cosmic_log.json
 a9755f661a0e826cb01a424dc6997308731dd286 assets/xeroc/models/item/cosmic_ore.json
+72dfe299c6df36976d36190d3f24aac33e1a895f assets/xeroc/models/item/cosmic_planks.json
+584d3488d556e88654cbeac7808d70cdc13331e7 assets/xeroc/models/item/cosmic_wood.json
+bea94956eaa92de28a3e8d65abdeeb60b12a20b5 assets/xeroc/models/item/stripped_cosmic_log.json
+67526e2c71810ea00d9f3e8d6e7b2a56efc66a3a assets/xeroc/models/item/stripped_cosmic_wood.json

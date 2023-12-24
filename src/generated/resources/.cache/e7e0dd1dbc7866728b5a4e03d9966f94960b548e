@@ -1,4 +1,6 @@
-// 1.20.1	2023-12-13T19:18:21.5056937	Tags for minecraft:item mod id xeroc
+// 1.20.1	2023-12-19T15:49:36.1962335	Tags for minecraft:item mod id xeroc
 c1e9f4976f7ad1acf1c62eb0c726af94309e7712 data/minecraft/tags/items/creeper_drop_music_discs.json
+1403c2fffb573d165de91a571e3234e57e18a01b data/minecraft/tags/items/logs_that_burn.json
 c1e9f4976f7ad1acf1c62eb0c726af94309e7712 data/minecraft/tags/items/music_discs.json
+c44429d43ab7debc2d9a7072b0d2ac94247fde4b data/minecraft/tags/items/planks.json
 01a2e61e3903182b1dde2f7abe4f1a13f74b5bee data/minecraft/tags/items/trimmable_armor.json

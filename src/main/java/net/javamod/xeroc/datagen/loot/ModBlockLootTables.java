@@ -1,21 +1,15 @@
 package net.javamod.xeroc.datagen.loot;
 
 import net.javamod.xeroc.block.ModBlock;
-import net.javamod.xeroc.item.ModItems;
-import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
-import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
-import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.minecraftforge.registries.RegistryObject;
 
@@ -29,6 +23,14 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     @Override
     protected void generate() {
         this.dropSelf(ModBlock.COSMIC_ORE.get());
+
+        this.dropSelf(ModBlock.COSMIC_LOG.get());
+        this.dropSelf(ModBlock.COSMIC_WOOD.get());
+        this.dropSelf(ModBlock.STRIPPED_COSMIC_WOOD.get());
+        this.dropSelf(ModBlock.STRIPPED_COSMIC_LOG.get());
+
+        this.dropSelf(ModBlock.COSMIC_PLANKS.get());
+        this.add(ModBlock.COSMIC_LEAVES.get(), block -> createLeavesDrops(block, ModBlock.COSMIC_ORE.get(),NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
     protected LootTable.Builder createCopperLikeOreDrops(Block pBlock, Item item) {

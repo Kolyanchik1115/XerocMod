@@ -1,2 +1,8 @@
-// 1.20.1	2023-12-13T19:18:21.4900727	Loot Tables
+// 1.20.1	2023-12-19T15:49:36.1962335	Loot Tables
+74f04c9bd0044911f49754c73fd929ba076e8c2c data/xeroc/loot_tables/blocks/cosmic_leaves.json
+8314bb7568fdfc289ceaf30ac2b2e40398fab17a data/xeroc/loot_tables/blocks/cosmic_log.json
 4f030de080c59e31744760967daa4d93e07e2d93 data/xeroc/loot_tables/blocks/cosmic_ore.json
+7bfc854f70ea4a00993ca51a854777d1655eca4e data/xeroc/loot_tables/blocks/cosmic_planks.json
+685cce39ac045710c46a60f2f5df7aa06b7d6976 data/xeroc/loot_tables/blocks/cosmic_wood.json
+8594354b332ea0f26f0ec5e815df56e197c3ae2b data/xeroc/loot_tables/blocks/stripped_cosmic_log.json
+b395cc049828a1451623e3561ae62f78d2b8bd1c data/xeroc/loot_tables/blocks/stripped_cosmic_wood.json

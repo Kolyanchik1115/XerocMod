@@ -1,6 +1,7 @@
 package net.javamod.xeroc.datagen;
 
 import net.javamod.xeroc.Xeroc;
+import net.javamod.xeroc.block.ModBlock;
 import net.javamod.xeroc.item.ModItems;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
@@ -29,5 +30,14 @@ public class ModItemTagGenerator extends ItemTagsProvider {
         this.tag(ItemTags.MUSIC_DISCS).add(ModItems.BAR_BRAWL_MUSIC_DISC.get());
         this.tag(ItemTags.CREEPER_DROP_MUSIC_DISCS).add(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlock.COSMIC_LOG.get().asItem())
+                .add(ModBlock.COSMIC_WOOD.get().asItem())
+                .add(ModBlock.STRIPPED_COSMIC_LOG.get().asItem())
+                .add(ModBlock.STRIPPED_COSMIC_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlock.COSMIC_PLANKS.get().asItem());
+    
     }
 }

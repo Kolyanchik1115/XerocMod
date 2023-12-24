@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "xeroc:block/stripped_cosmic_log",
+    "side": "xeroc:block/stripped_cosmic_log"
+  }
+}

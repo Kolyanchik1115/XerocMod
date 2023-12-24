@@ -1,3 +1,5 @@
-// 1.20.1	2023-12-13T19:18:21.5056937	Tags for minecraft:block mod id xeroc
+// 1.20.1	2023-12-19T15:49:36.1962335	Tags for minecraft:block mod id xeroc
 52336b7d126f82b3a32951d8fdcd6a783fd8b470 data/forge/tags/blocks/needs_netherite_tool.json
+1403c2fffb573d165de91a571e3234e57e18a01b data/minecraft/tags/blocks/logs_that_burn.json
 52336b7d126f82b3a32951d8fdcd6a783fd8b470 data/minecraft/tags/blocks/mineable/pickaxe.json
+c44429d43ab7debc2d9a7072b0d2ac94247fde4b data/minecraft/tags/blocks/planks.json
